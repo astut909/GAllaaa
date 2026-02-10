@@ -1,0 +1,7 @@
+{
+  "name": "VoiceKhaata - AI Ledger",
+  "description": "A digital ledger for businesses that uses AI voice recognition to record and manage credit/debit transactions seamlessly.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
