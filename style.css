@@ -1,0 +1,133 @@
+:root {
+  --primary: #6C4CF1;
+  --bg-light: rgba(255,255,255,0.15);
+  --bg-dark: #1e1e2f;
+  --text-light: #fff;
+  --text-dark: #111;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#6C4CF1,#2c1f70);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Toggle Button */
+.chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Container */
+.chat-container {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 370px;
+  height: 550px;
+  border-radius: 25px;
+  backdrop-filter: blur(20px);
+  background: var(--bg-light);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0);
+  transition: 0.4s cubic-bezier(.8,-0.5,.2,1.4);
+}
+
+.chat-container.active {
+  transform: scale(1);
+}
+
+/* Header */
+.chat-header {
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Messages */
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  color: white;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  background: rgba(255,255,255,0.2);
+}
+
+.chat-input-area input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.chat-input-area button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  margin-left: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Message Bubbles */
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  max-width: 75%;
+}
+
+.user {
+  background: var(--primary);
+  align-self: flex-end;
+}
+
+.bot {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Mic Pulse */
+.mic.recording {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,0,0,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255,0,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+}
+
+/* Dark Mode */
+.dark {
+  background: var(--bg-dark) !important;
+}
